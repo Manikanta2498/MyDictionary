@@ -11,7 +11,7 @@ export class DictService {
 
   constructor(private http: HttpClient) { }
   getMnemonics(word: any): Observable<any> {
-    let url = 'http://localhost:8000/mnemonics/';
+    let url = 'https://manidict.herokuapp.com/mnemonics/';
     const headers = { 'Content-Type': 'text/plain' };
     return this.http.post<any[]>(url, word ,{ headers }).pipe(
       tap(data => {
@@ -19,7 +19,7 @@ export class DictService {
       }));
   }
   getMeanings(word: any): Observable<any> {
-    let url = 'http://localhost:8000/meanings/';
+    let url = 'https://manidict.herokuapp.com/meanings/';
     const headers = { 'Content-Type': 'text/plain' };
     return this.http.post<any[]>(url, word ,{ headers }).pipe(
       tap(data => {
