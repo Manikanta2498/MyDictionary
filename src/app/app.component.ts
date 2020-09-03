@@ -19,6 +19,7 @@ export class AppComponent {
   keyDownFunction(event) {
     if (event.keyCode === 13) {
       this.means = [];
+      this.mnems = [];
        this.dictService.getMnemonics(this.word.value).subscribe({
          next: data =>{
           // alert(data);
