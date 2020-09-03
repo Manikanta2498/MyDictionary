@@ -9,13 +9,27 @@
     </form>
   </div>
 </div>
-<div style="height: 400px; width: 600px;padding-top: 2%;">
-  <div id="c1" style="overflow: auto; max-height: 400px;">
-    <p-card [style]="{'width': '600px'}" *ngFor="let mnem of mnems">
-      {{mnem}}
-    </p-card>
-  </div> 
+<div class="p-grid bottom" *ngIf="means">
+  <div class="p-col-6">
+    <p center>Meanings</p>
+    <div id="c1" style="overflow: auto; max-height: 400px;">
+      <p-card  *ngFor="let mean of means">
+        {{mean}}
+      </p-card>
+    </div> 
+  </div>
+  <div class="p-col-6">
+    <p>Mnemonics</p>
+    <div id="c1" style="overflow: auto; max-height: 400px;">
+      <p-card  *ngFor="let mnem of mnems">
+        {{mnem}}
+      </p-card>
+    </div> 
+  </div>
 </div>
+<!-- <div style="height: 400px; width: 600px;padding-top: 2%;">
+  
+</div> -->
 <!-- <div id="c1" class="cards" style="overflow: auto; max-height: 60%;">
   <p-card [style]="{'width': '400px'}" *ngFor="let mnem of mnems">
     {{mnem}}

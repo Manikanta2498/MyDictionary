@@ -1,14 +1,19 @@
 .search{
-    padding-top: 5%;
+    padding-top: 4%;
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
-    padding: 5px;
+    /* padding: 5px; */
 }
+
 input{
-    width:500px;
+    width:300px;
 }
-.cards{
-    /* z-index: 0; */
-    height: 60%;
+.bottom{
+    padding-top: 1%;
+}
+p{
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: aqua;
 }

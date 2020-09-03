@@ -13,7 +13,14 @@ export class DictService {
   getMnemonics(word: any): Observable<any> {
     let url = 'http://localhost:8000/mnemonics/';
     const headers = { 'Content-Type': 'text/plain' };
-      const body = 'inchoate';
+    return this.http.post<any[]>(url, word ,{ headers }).pipe(
+      tap(data => {
+        console.log(data);
+      }));
+  }
+  getMeanings(word: any): Observable<any> {
+    let url = 'http://localhost:8000/meanings/';
+    const headers = { 'Content-Type': 'text/plain' };
     return this.http.post<any[]>(url, word ,{ headers }).pipe(
       tap(data => {
         console.log(data);
