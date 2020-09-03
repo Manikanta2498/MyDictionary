@@ -6,7 +6,7 @@
 }
 
 input{
-    width:300px;
+    width:100%;
 }
 .bottom{
     padding-top: 1%;
@@ -17,4 +17,5 @@ p{
     font-size: 20px;
     color: aqua;
     text-align: center;
+
 }
