@@ -1,0 +1,23 @@
+<div class="p-grid search">
+  <div class="p-col-4"></div>
+  <div class="p-col-6">
+    <form (keydown)="keyDownFunction($event)">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText  placeholder="Search" [formControl]="word"/>
+      </span>
+    </form>
+  </div>
+</div>
+<div style="height: 400px; width: 600px;padding-top: 2%;">
+  <div id="c1" style="overflow: auto; max-height: 400px;">
+    <p-card [style]="{'width': '600px'}" *ngFor="let mnem of mnems">
+      {{mnem}}
+    </p-card>
+  </div> 
+</div>
+<!-- <div id="c1" class="cards" style="overflow: auto; max-height: 60%;">
+  <p-card [style]="{'width': '400px'}" *ngFor="let mnem of mnems">
+    {{mnem}}
+  </p-card>
+</div> -->
