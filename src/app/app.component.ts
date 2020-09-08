@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DictService } from './dict.service';
 
@@ -7,11 +7,12 @@ import { DictService } from './dict.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'my-dict';
   // word: string;
   mnems: any[];
   means: any[];
+  loading: boolean = true;
   word = new FormControl('');
 
   constructor(private dictService: DictService) { }
@@ -33,5 +34,12 @@ export class AppComponent {
         }
       });  
     }
+  }
+  ngOnInit() {
+    this.dictService.getMeanings('inchoate').subscribe({
+      next: data =>{
+        this.loading = false;
+      }
+    });  
   }
 }
