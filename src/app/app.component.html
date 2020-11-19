@@ -9,7 +9,7 @@
       <form (keydown)="keyDownFunction($event)">
         <!-- <span class="p-input-icon-left"> -->
           <i class="pi pi-search"></i>
-          <input type="text" pInputText  placeholder="Search for meaning" [formControl]="word"/>
+          <input type="text" pInputText  placeholder="Search for meaning (Ex: cogent)" [formControl]="word"/>
         <!-- </span> -->
       </form>
     </div>
@@ -25,10 +25,13 @@
     </div>
     <div class="p-col-6">
       <p>Mnemonics</p>
-      <div id="c1" style="overflow: auto; max-height: 400px;">
+      <div id="c1" *ngIf="mnems" style="overflow: auto; max-height: 400px;">
         <p-card  *ngFor="let mnem of mnems">
           {{mnem}}
         </p-card>
+      </div> 
+      <div id="c1" *ngIf="mnems.length == 0" style="overflow: auto; max-height: 400px;">
+        <h2>SERVER BUSY...</h2>
       </div> 
     </div>
   </div>
