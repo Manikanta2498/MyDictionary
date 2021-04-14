@@ -36,7 +36,7 @@ export class AppComponent implements OnInit{
     }
   }
   ngOnInit() {
-    this.dictService.getMeanings('inchoate').subscribe({
+    this.dictService.getMeanings('cogent').subscribe({
       next: data =>{
         this.loading = false;
       }
